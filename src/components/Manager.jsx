@@ -79,33 +79,29 @@ const Manager = () => {
 
                 <div className="passwords">
                     <h2 className='font-bold text-2xl py-4'>Your Passwords</h2>
-                    {passwords.length === 0 && <div>No passwords to show</div>}
-                    <table className="table-auto w-full rounded-sm overflow-hidden">
+                    {passwordArray.length === 0 && <div>No passwords to show</div>}
+                    {passwordArray.length != 0 && <table className="table-auto w-full rounded-sm overflow-hidden">
                         <thead className='bg-green-800 text-white'>
                             <tr>
-                                <th className='py-2'>Song</th>
-                                <th className='py-2'>Artist</th>
-                                <th className='py-2'>Year</th>
+                                <th className='py-2'>Site</th>
+                                <th className='py-2'>Username</th>
+                                <th className='py-2'>Password</th>
                             </tr>
                         </thead>
                         <tbody className='bg-green-100'>
-                            <tr>
-                                <td className=' py-2 border border-white text-center w-32'>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                                <td className=' py-2 border border-white text-center w-32'>Malcolm Lockyer</td>
-                                <td className=' py-2 border border-white text-center w-32'>1961</td>
-                            </tr>
-                            <tr>
-                                <td className=' py-2 border border-white text-center w-32'>Witchy Woman</td>
-                                <td className=' py-2 border border-white text-center w-32'>The Eagles</td>
-                                <td className=' py-2 border border-white text-center w-32'>1972</td>
-                            </tr>
-                            <tr>
-                                <td className=' py-2 border border-white text-center w-32'>Shining Star</td>
-                                <td className=' py-2 border border-white text-center w-32'>Earth, Wind, and Fire</td>
-                                <td className=' py-2 border border-white text-center w-32'>1975</td>
-                            </tr>
+                            {passwordArray.map((data, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <td className='cursor-pointer py-2 border border-white text-center w-32'><a href={data.site} target='_blank'>{data.site}</a></td>
+                                        <td className=' py-2 border border-white text-center w-32'>{data.username}</td>
+                                        <td className=' py-2 border border-white text-center w-32'>{data.password}</td>
+                                    </tr>
+                                )
+                            })}
+
+
                         </tbody>
-                    </table>
+                    </table>}
                 </div>
             </div>
         </>
