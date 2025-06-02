@@ -8,6 +8,7 @@ const Manager = () => {
         password: ""
     });
     const [passwordArray, setPasswordArray] = useState([]);
+    const passwordRef = useRef();
 
     useEffect(() => {
         let passwords = localStorage.getItem("passwords");
@@ -18,11 +19,13 @@ const Manager = () => {
 
 
     const showPassword = () => {
+        passwordRef.current.type = "text";
         const src = ref.current.src;
         console.log(src);
 
         if (src.endsWith("hide.png")) {
             ref.current.src = "/show.png"
+            passwordRef.current.type = "password";
         }
         else {
             ref.current.src = "/hide.png"
@@ -60,14 +63,14 @@ const Manager = () => {
                     <div className="flex w-full gap-8">
                         <input value={form.username} onChange={handleChange} placeholder='Enter Username' className='rounded-full border border-green-500 w-full p-4 py-1' type="text" name='username' id='username' />
                         <div className="relative">
-                            <input value={form.password} onChange={handleChange} placeholder='Enter Password' className='rounded-full border border-green-500 w-full p-4 py-1' type="text" name='password' id='password' />
+                            <input ref={passwordRef} value={form.password} onChange={handleChange} placeholder='Enter Password' className='rounded-full border border-green-500 w-full p-4 py-1' type="password" name='password' id='password' />
                             <span className="absolute right-0 top-0 cursor-pointer" onClick={showPassword}>
                                 <img ref={ref} width={35} className='p-2' src="/show.png" alt="Show icon" />
                             </span>
                         </div>
                     </div>
 
-                    <button onClick={savePassword} className='flex justify-center items-center bg-green-400 rounded-full gap-2 border border-green-900 px-8 py-2 w-fit hover:bg-green-300'>
+                    <button onClick={savePassword} className='cursor-pointer flex justify-center items-center bg-green-400 rounded-full gap-2 border border-green-900 px-8 py-2 w-fit hover:bg-green-300'>
                         <lord-icon
                             src="https://cdn.lordicon.com/ueoydrft.json"
                             trigger="hover"
