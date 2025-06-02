@@ -95,9 +95,46 @@ const Manager = () => {
                             {passwordArray.map((data, index) => {
                                 return (
                                     <tr key={index}>
-                                        <td className='cursor-pointer py-2 border border-white text-center w-32'><a href={data.site} target='_blank'>{data.site}</a></td>
-                                        <td className=' py-2 border border-white text-center w-32'>{data.username}</td>
-                                        <td className=' py-2 border border-white text-center w-32'>{data.password}</td>
+                                        <td className='cursor-pointer py-2 border border-white text-center'>
+                                            <div className="flex justify-center items-center">
+                                                <a href={data.site} target='_blank'>{data.site}</a>
+                                                <div className="lordiconcopy size-7 cursor-pointer" onClick={copyText(data.site)}>
+                                                    <lord-icon
+                                                        src="https://cdn.lordicon.com/hnqamtrw.json"
+                                                        trigger="hover"
+                                                        style={{ width: "20px", height: "20px", paddingTop: "4px" }}
+                                                    >
+                                                    </lord-icon>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td className='py-2 border border-white text-center'>
+                                            <div className="flex justify-center items-center">
+                                                <span>{data.username}</span>
+                                                <div className="lordiconcopy size-7 cursor-pointer" onClick={copyText(data.username)}>
+                                                    <lord-icon
+                                                        src="https://cdn.lordicon.com/hnqamtrw.json"
+                                                        trigger="hover"
+                                                        style={{ width: "20px", height: "20px", paddingTop: "4px" }}
+                                                    >
+                                                    </lord-icon>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td className='py-2 border border-white text-center'>
+                                            <div className="flex justify-center items-center">
+                                                <span>{data.password}</span>
+                                                <div className="lordiconcopy size-7 cursor-pointer" onClick={copyText(data.password)}>
+                                                    <lord-icon
+                                                        src="https://cdn.lordicon.com/hnqamtrw.json"
+                                                        trigger="hover"
+                                                        style={{ width: "20px", height: "20px", paddingTop: "4px" }}
+                                                    >
+                                                    </lord-icon>
+                                                </div>
+                                            </div>
+
+                                        </td>
                                     </tr>
                                 )
                             })}
