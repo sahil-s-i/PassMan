@@ -46,6 +46,10 @@ const Manager = () => {
         })
     }
 
+    const copyText = (txt) => {
+        navigator.clipboard.writeText(txt);
+    }
+
     return (
         <>
             <div className="absolute inset-0 -z-10 h-full w-full bg-green-50 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
@@ -98,10 +102,10 @@ const Manager = () => {
                                         <td className='cursor-pointer py-2 border border-white text-center'>
                                             <div className="flex justify-center items-center">
                                                 <a href={data.site} target='_blank'>{data.site}</a>
-                                                <div className="lordiconcopy size-7 cursor-pointer" onClick={copyText(data.site)}>
+                                                <div className="lordiconcopy size-7 cursor-pointer" onClick={() => { copyText(data.site) }}>
                                                     <lord-icon
                                                         src="https://cdn.lordicon.com/hnqamtrw.json"
-                                                        trigger="hover"
+                                                        trigger="click"
                                                         style={{ width: "20px", height: "20px", paddingTop: "4px" }}
                                                     >
                                                     </lord-icon>
@@ -111,10 +115,10 @@ const Manager = () => {
                                         <td className='py-2 border border-white text-center'>
                                             <div className="flex justify-center items-center">
                                                 <span>{data.username}</span>
-                                                <div className="lordiconcopy size-7 cursor-pointer" onClick={copyText(data.username)}>
+                                                <div className="lordiconcopy size-7 cursor-pointer" onClick={() => { copyText(data.username) }}>
                                                     <lord-icon
                                                         src="https://cdn.lordicon.com/hnqamtrw.json"
-                                                        trigger="hover"
+                                                        trigger="click"
                                                         style={{ width: "20px", height: "20px", paddingTop: "4px" }}
                                                     >
                                                     </lord-icon>
@@ -124,10 +128,10 @@ const Manager = () => {
                                         <td className='py-2 border border-white text-center'>
                                             <div className="flex justify-center items-center">
                                                 <span>{data.password}</span>
-                                                <div className="lordiconcopy size-7 cursor-pointer" onClick={copyText(data.password)}>
+                                                <div className="lordiconcopy size-7 cursor-pointer" onClick={() => { copyText(data.password) }}>
                                                     <lord-icon
                                                         src="https://cdn.lordicon.com/hnqamtrw.json"
-                                                        trigger="hover"
+                                                        trigger="click"
                                                         style={{ width: "20px", height: "20px", paddingTop: "4px" }}
                                                     >
                                                     </lord-icon>
