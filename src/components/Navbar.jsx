@@ -17,8 +17,15 @@ const Navbar = () => {
                     </li>
                 </ul> */}
                 <button className='cursor-pointer text-white bg-green-500 rounded-full flex items-center justify-center'>
-                    <img className='invert px-3 w-16' src="/github.svg" alt="git hub icon" />
-                   <span className='font-bold px-2'>GitHub</span>  
+                    {/* <img className='invert px-3 w-16' src="/github.svg" alt="git hub icon" /> */}
+                    <lord-icon
+                        src="https://cdn.lordicon.com/ioihllwu.json"
+                        trigger="hover"
+                        colors="primary:#ffffff"
+                        style={{ width: "35px", height: "35px" }}
+                        >
+                    </lord-icon>
+                    <span className='font-bold px-2'>GitHub</span>
                 </button>
             </div>
         </nav>
