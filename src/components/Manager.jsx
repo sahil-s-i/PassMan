@@ -121,6 +121,7 @@ const Manager = () => {
                                 <th className='py-2'>Site</th>
                                 <th className='py-2'>Username</th>
                                 <th className='py-2'>Password</th>
+                                <th className='py-2'>Actions</th>
                             </tr>
                         </thead>
                         <tbody className='bg-green-100'>
@@ -165,6 +166,9 @@ const Manager = () => {
                                                     </lord-icon>
                                                 </div>
                                             </div>
+                                        </td>
+                                        <td className='py-2 border border-white text-center'>
+                                            <span>Delete</span>
                                         </td>
                                     </tr>
                                 )
