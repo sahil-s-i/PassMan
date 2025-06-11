@@ -16,14 +16,14 @@ const Navbar = () => {
                         <a className='hover:font-bold' href="/contact">Contact</a>
                     </li>
                 </ul> */}
-                <button className='cursor-pointer text-white bg-green-500 rounded-full flex items-center justify-center'>
+                <button className='cursor-pointer text-white bg-green-500 rounded-full flex items-center justify-center ring-1 ring-white'>
                     {/* <img className='invert px-3 w-16' src="/github.svg" alt="git hub icon" /> */}
                     <lord-icon
                         src="https://cdn.lordicon.com/ioihllwu.json"
                         trigger="hover"
                         colors="primary:#ffffff"
                         style={{ width: "35px", height: "35px" }}
-                        >
+                    >
                     </lord-icon>
                     <span className='font-bold px-2'>GitHub</span>
                 </button>
