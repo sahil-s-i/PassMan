@@ -168,7 +168,21 @@ const Manager = () => {
                                             </div>
                                         </td>
                                         <td className='py-2 border border-white text-center'>
-                                            <span>Delete</span>
+                                            <span className='cursor-pointer mx-1.5'>
+                                                <lord-icon
+                                                    src="https://cdn.lordicon.com/qawxkplz.json"
+                                                    trigger="hover"
+                                                    style={{ width: "25px", height: "25px" }}
+                                                >
+                                                </lord-icon>
+                                            </span>
+                                            <span className='cursor-pointer mx-1.5'>
+                                                <lord-icon src="https://cdn.lordicon.com/oqeixref.json"
+                                                    trigger="hover"
+                                                    style={{ width: "25px", height: "25px" }}
+                                                >
+                                                </lord-icon>
+                                            </span>
                                         </td>
                                     </tr>
                                 )
